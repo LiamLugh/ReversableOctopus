@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject inventoryPrefab;
     public GameObject inventoryParent;
-
     public GameObject animalPrefab;
 
     private void Awake()
@@ -25,18 +24,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    void Update()
-    {
-        
-    }
-
     //this is the funciton the ship script will call when it collides with a animal
     //this script will then instantiate a prefab into the next available spot
     //this will also need to check if the animals have found their pairs - put them side by side
     public void collectAnimal(string animalName)
     {
-        GameObject animal = Instantiate(animalPrefab, inventoryPositions[0]);
+        foreach(string existingAnimal in collectedAnimals)
+        {
+            if (animalName.Equals(existingAnimal))
+            {
+                //double them up here, maybe change sprite to a double one?
+                break;
+            }
+        }
+        //check positions
+        int position = collectedAnimals.Count - 1;
+        GameObject animal = Instantiate(animalPrefab, inventoryPositions[position]);
+
         animal.name = animalName;
         Image animalSprite= animal.GetComponent<Image>();
         animalSprite.sprite = Resources.Load<Sprite>(animalName);

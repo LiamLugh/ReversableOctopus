@@ -46,14 +46,11 @@ public class Ship : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //checks collided trigger for death or score increment
-        if (other.gameObject.name == "Chicken")
+        if (other.gameObject.tag == "Animal")
         {
-            //increment count
-            //add icon to inventory
             if (gm.collectedAnimals.Count < Globals.levelPairCount)
             {
-                gm.collectAnimal("Chicken");
+                gm.collectAnimal(other.gameObject.name);
                 Destroy(other.gameObject);
             }
         }

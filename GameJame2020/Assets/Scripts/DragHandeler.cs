@@ -9,7 +9,6 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	Transform startParent;
 
 	#region IBeginDragHandler implementation
-
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 		itemBeingDragged = gameObject;
@@ -17,20 +16,16 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		startParent = transform.parent;
 		GetComponent<CanvasGroup>().blocksRaycasts = false;
 	}
-
 	#endregion
 
 	#region IDragHandler implementation
-
 	public void OnDrag(PointerEventData eventData)
 	{
 		transform.position = eventData.position;
 	}
-
 	#endregion
 
 	#region IEndDragHandler implementation
-
 	public void OnEndDrag(PointerEventData eventData)
 	{
 		itemBeingDragged = null;
@@ -40,9 +35,5 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			transform.position = startPosition;
 		}
 	}
-
 	#endregion
-
-
-
 }
