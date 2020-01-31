@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     }
     public void OnPlayClicked()
     {
+        Globals.paused = false;
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
