@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour, IHasChanged
 {
 	[SerializeField] Transform slots;
-
-	// Use this for initialization
-	void Start()
+    GameManager gm;
+    // Use this for initialization
+    void Start()
 	{
-		HasChanged();
+        gm = FindObjectOfType<GameManager>();
+        HasChanged();
 	}
 
 	#region IHasChanged implementation
@@ -23,10 +24,11 @@ public class Inventory : MonoBehaviour, IHasChanged
 			if (item)
 			{
 				builder.Append(item.name);
-			}
-		}
-		//inventoryText.text = builder.ToString();
-		//here we remove the dropped animal from the inventory(icon) and boot it off the ship via the cannon :D
+                gm.removeAnimal(builder.ToString());
+                //here we remove the dropped animal from the inventory(icon) and boot it off the ship via the cannon :D
+                Object.Destroy(item);
+            }
+        }
 	}
 	#endregion
 }

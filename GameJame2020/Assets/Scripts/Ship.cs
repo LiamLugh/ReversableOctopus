@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    public GameManager gm;
     public Rigidbody rb;
     public float shipSpeed = 1.0f;
     public float maxSpeed = 5.0f;
@@ -46,11 +47,15 @@ public class Ship : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //checks collided trigger for death or score increment
-        if (other.gameObject.name == "Animal")
+        if (other.gameObject.name == "Chicken")
         {
             //increment count
             //add icon to inventory
-            Destroy(other.gameObject);
+            if (gm.collectedAnimals.Count < Globals.levelPairCount)
+            {
+                gm.collectAnimal("Chicken");
+                Destroy(other.gameObject);
+            }
         }
     }
 
