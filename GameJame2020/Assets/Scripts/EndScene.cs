@@ -10,14 +10,16 @@ public class EndScene : MonoBehaviour
     void Awake()
     {
         //decide which canvas to display
-        /*if(win){
-        win.SetActive(true);
-        lose.SetActive(false);
-        }else{
-        win.SetActive(false);
-        lose.SetActive(true);
+        if (Globals.win == true)
+        {
+            win.SetActive(true);
+            lose.SetActive(false);
         }
-    */
+        else
+        {
+            win.SetActive(false);
+            lose.SetActive(true);
+        }
     }
 
     public void OnContinueClick()
