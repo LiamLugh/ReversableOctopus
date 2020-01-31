@@ -22,8 +22,11 @@ public class Countdown : MonoBehaviour
     {
         while (timeLeft > 0)
         {
-            yield return new WaitForSeconds(1);
-            timeLeft--;
+            if(Globals.paused == false)
+            {
+                yield return new WaitForSeconds(1);
+                timeLeft--;
+            }
         }
 
         //here we simply go to a lose state because a win state hasnt been triggered beforehand
