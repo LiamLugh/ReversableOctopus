@@ -20,10 +20,14 @@ public class Countdown : MonoBehaviour
 
     IEnumerator LoseTime()
     {
-        while (true)
+        while (timeLeft > 0)
         {
             yield return new WaitForSeconds(1);
             timeLeft--;
         }
+
+        //here we simply go to a lose state because a win state hasnt been triggered beforehand
+        Globals.win = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("WinLose");
     }
 }

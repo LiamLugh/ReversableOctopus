@@ -24,6 +24,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        //check for win state here
+        //might have to look at changing the string in the collected animals to something else
+        //so as a win state we could check if we have the required amount of "colelcted" or something
+    }
+
     //this is the funciton the ship script will call when it collides with a animal
     //this script will then instantiate a prefab into the next available spot
     //this will also need to check if the animals have found their pairs - put them side by side
@@ -71,6 +78,7 @@ public class GameManager : MonoBehaviour
             if (animalName.Equals(animal))
             {
                 collectedAnimals.Remove(animalName);
+                //animate model being shot from cannon
                 break;
             }
         }
