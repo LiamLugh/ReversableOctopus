@@ -54,6 +54,10 @@ public class Ship : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+        if(other.gameObject.tag == "Land")
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
 }
