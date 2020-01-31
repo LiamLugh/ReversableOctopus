@@ -29,22 +29,37 @@ public class GameManager : MonoBehaviour
     //this will also need to check if the animals have found their pairs - put them side by side
     public void collectAnimal(string animalName)
     {
-        foreach(string existingAnimal in collectedAnimals)
+        bool spawned = false;
+        for (int i = 0; i < collectedAnimals.Count; i++)
         {
-            if (animalName.Equals(existingAnimal))
+            if (animalName.Equals(collectedAnimals[i]))
             {
-                //double them up here, maybe change sprite to a double one?
+                spawnAnimals(i, 10, animalName);
+                spawned = true;
                 break;
             }
         }
-        //check positions
-        int position = collectedAnimals.Count - 1;
-        GameObject animal = Instantiate(animalPrefab, inventoryPositions[position]);
 
+        if (spawned == false)
+        {
+            //check positions
+            int position = collectedAnimals.Count;
+            spawnAnimals(position, 0, animalName);
+        }
+    }
+
+    void spawnAnimals(int position, int offset, string animalName)
+    {
+        GameObject animal = Instantiate(animalPrefab, inventoryPositions[position]);
+        animal.transform.position = new Vector3(animal.transform.position.x + offset, animal.transform.position.y, animal.transform.position.z);
         animal.name = animalName;
-        Image animalSprite= animal.GetComponent<Image>();
+        Image animalSprite = animal.GetComponent<Image>();
         animalSprite.sprite = Resources.Load<Sprite>(animalName);
-        collectedAnimals.Add(animalName);
+        Destroy(animal.GetComponent<DragHandeler>());
+        if(offset < 9)
+        {
+            collectedAnimals.Add(animalName);
+        }
     }
 
     //this script is called when a animal needs to be removed fromt the list and then shot out of the cannon
