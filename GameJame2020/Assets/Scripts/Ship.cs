@@ -60,7 +60,7 @@ public class Ship : MonoBehaviour
     {
         if (other.gameObject.tag == "Animal")
         {
-            if (gm.collectedAnimals.Count < Globals.levelPairCount)
+            if (gm.collectedAnimals.Count < Globals.levelPairCount+1)
             {
                 gm.collectAnimal(other.gameObject.name);
                 Destroy(other.gameObject);

@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         }
         //check for win state here
         //might have to look at changing the string in the collected animals to something else
-        //so as a win state we could check if we have the  required amount of "colelcted" or something
+        //so as a win state we could check if we have the required amount of "colelcted" or something
     }
 
     //this is the funciton the ship script will call when it collides with a animal
@@ -91,12 +91,31 @@ public class GameManager : MonoBehaviour
     //this string will get send on the collision of the dropped item
     public void removeAnimal(string animalName)
     {
-        foreach(string animal in collectedAnimals)
+        //foreach(string animal in collectedAnimals)
+        for(int i = 0; i < collectedAnimals.Count; i++)
         {
-            if (animalName.Equals(animal))
+            if (animalName.Equals(collectedAnimals[i]))
             {
                 collectedAnimals.Remove(animalName);
                 //animate model being shot from cannon
+
+                //move all other animals further on from that number to the previous spot
+                if(i + 1 < inventoryPositions.Count)
+                {
+                    for (int j = i + 1; j < inventoryPositions.Count; j++)
+                    {
+                        if(inventoryPositions[j].childCount > 0)
+                        {
+                            for (int k = 0; k < inventoryPositions[j].childCount; k++)
+                            {
+                                Transform child = inventoryPositions[j].GetChild(k);
+                                child.SetParent(inventoryPositions[j - 1]);
+                                child.localPosition = Vector3.zero;
+                            }
+                        }
+                    }
+                }
+                
                 break;
             }
         }
