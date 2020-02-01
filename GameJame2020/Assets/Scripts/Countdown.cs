@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Countdown : MonoBehaviour
 {
-    int timeLeft = 60;
+    int timeLeft;
     public TextMeshProUGUI countdown;
 
     void Start()
     {
+        timeLeft = Globals.time;
         StartCoroutine(LoseTime());
         Time.timeScale = 1;
     }

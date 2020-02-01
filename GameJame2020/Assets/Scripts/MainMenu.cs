@@ -22,8 +22,20 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         Globals.levelPairCount = Int16.Parse(pairCount.text);
-            //Int16.Parse(pairCount.itemText.text);
+        switch (Globals.levelPairCount)
+        {
+            case 1:
+                Globals.time = 45;
+                break;
+            case 2:
+                Globals.time = 60;
+                break;
+            case 3:
+                Globals.time = 75;
+                break;
+        }
     }
+
     public void OnPlayClicked()
     {
         Globals.paused = false;
