@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject animalPrefab;
     int winCount = 0;
 
+    public ImageData[] imageData;
+
     private void Awake()
     {
         collectedAnimals = new List<string>();
@@ -77,6 +79,36 @@ public class GameManager : MonoBehaviour
         animal.name = animalName;
         Image animalSprite = animal.GetComponent<Image>();
         animalSprite.sprite = Resources.Load<Sprite>(animalName);
+
+        switch(animalName)
+        {
+            case "Elephant":
+                animalSprite.rectTransform.sizeDelta = new Vector2(imageData[0].data[0], imageData[0].data[1]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[0].data[2], imageData[0].data[3]);
+                animalSprite.rectTransform.localScale = Vector3.one * imageData[0].data[4];
+                break;
+            case "Giraffe":
+                animalSprite.rectTransform.sizeDelta = new Vector2(imageData[1].data[0], imageData[1].data[1]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[1].data[2], imageData[1].data[3]);
+                animalSprite.rectTransform.localScale = Vector3.one * imageData[1].data[4];
+                break;
+            case "Penguin":
+                animalSprite.rectTransform.sizeDelta = new Vector2(imageData[2].data[0], imageData[2].data[1]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[2].data[2], imageData[2].data[3]);
+                animalSprite.rectTransform.localScale = Vector3.one * imageData[2].data[4];
+                break;
+            case "Pig":
+                animalSprite.rectTransform.sizeDelta = new Vector2(imageData[3].data[0], imageData[3].data[1]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[3].data[2], imageData[3].data[3]);
+                animalSprite.rectTransform.localScale = Vector3.one * imageData[3].data[4];
+                break;
+            case "Unicorn":
+                animalSprite.rectTransform.sizeDelta = new Vector2(imageData[4].data[0], imageData[4].data[1]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[4].data[2], imageData[4].data[3]);
+                animalSprite.rectTransform.localScale = Vector3.one * imageData[4].data[4];
+                break;
+        }
+
         if(offset < 9)
         {
             collectedAnimals.Add(animalName);
@@ -111,6 +143,31 @@ public class GameManager : MonoBehaviour
                                 Transform child = inventoryPositions[j].GetChild(k);
                                 child.SetParent(inventoryPositions[j - 1]);
                                 child.localPosition = Vector3.zero;
+                                string childName = child.name;
+
+                                switch (childName)
+                                {
+                                    case "Elephant":
+                                        child.GetComponent<RectTransform>().localPosition = new Vector2(imageData[0].data[2], imageData[0].data[3]);
+                                        break;
+                                    case "Giraffe":
+                                        child.GetComponent<RectTransform>().localPosition = new Vector2(imageData[1].data[2], imageData[1].data[3]);
+                                        break;
+                                    case "Penguin":
+                                        child.GetComponent<RectTransform>().localPosition = new Vector2(imageData[2].data[2], imageData[2].data[3]);
+                                        break;
+                                    case "Pig":
+                                        child.GetComponent<RectTransform>().localPosition = new Vector2(imageData[3].data[2], imageData[3].data[3]);
+                                        break;
+                                    case "Unicorn":
+                                        child.GetComponent<RectTransform>().localPosition = new Vector2(imageData[4].data[2], imageData[4].data[3]);
+                                        break;
+                                }
+
+                                if(k > 0)
+                                {
+                                    child.localPosition = new Vector3(child.localPosition.x + 10, child.localPosition.y);
+                                }
                             }
                         }
                     }
@@ -120,4 +177,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+}
+
+[System.Serializable]
+public struct ImageData
+{
+    public string name;
+    public float[] data;
 }

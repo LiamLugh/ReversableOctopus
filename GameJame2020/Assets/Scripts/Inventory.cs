@@ -6,6 +6,9 @@ public class Inventory : MonoBehaviour, IHasChanged
 {
 	[SerializeField] Transform slots;
     GameManager gm;
+
+
+
     // Use this for initialization
     void Start()
 	{

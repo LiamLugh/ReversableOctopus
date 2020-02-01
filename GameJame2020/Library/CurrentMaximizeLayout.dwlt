@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 681, y: 494}
+  m_MinSize: {x: 583, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 13241
+  controlID: 27322
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -33,11 +33,11 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
+  m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
@@ -127,10 +127,10 @@ MonoBehaviour:
     y: 0
     width: 995
     height: 635
-  m_MinSize: {x: 404, y: 494}
+  m_MinSize: {x: 306, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 13242
+  controlID: 27281
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,10 +152,10 @@ MonoBehaviour:
     y: 0
     width: 995
     height: 363
-  m_MinSize: {x: 404, y: 222}
-  m_MaxSize: {x: 8004, y: 4022}
+  m_MinSize: {x: 306, y: 222}
+  m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 13243
+  controlID: 27239
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -213,7 +213,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b0afffffb8afffffc0afffffc8afffffccafffff96b2ffff9ab2ffffb0b6ffffb8b6ffffbeb6ffff4ab8ffffb8bbffffb6bfffff70c3ffff2cd0ffffb0d8ffff02daffff32dbffff98deffff50e1ffffb4e1ffffb8ebffff82efffffb0efffffe6efffff08f1ffffcef3ffff3ef5ffff84f5ffff1efaffffc0faffff6efbffff183900002e39000054390000a4390000623e0000c23e000040520000d86400002e6500004c700000ac700000e6700000327400003a750000cc7600002c77000066770000727d0000d27d00000c7e0000c4820000248300005e830000
+      m_ExpandedIDs: 5c5cffffe862ffff9065ffffa865ffff847dffff567fffff5e7fffff667fffff6e7fffff2481ffff5c82ffffac84ffff888bffff749affffe69fffff2ca2ffff38a2ffff92a3ffff9ea3ffff08a6ffffe8a7fffff0a7fffff8a7fffffea7ffff38abffff3eabffff3aacffff42acffff4aacffff58acffff96adffff9eadffffa6adffffaeadffffb4adffffb0afffffb8afffffc0afffffc8afffffccafffff96b2ffff9ab2ffffb0b6ffffb8b6ffffbeb6ffff4ab8ffffb8bbffffb6bfffff70c3ffff2cd0ffffb0d8ffff02daffff32dbffff98deffff50e1ffffb4e1ffffb8ebffff82efffffb0efffffe6efffff08f1ffffcef3ffff3ef5ffff84f5ffff1efaffffc0faffff6efbffff183900002e39000054390000a4390000623e0000c23e000040520000d86400002e6500004c700000ac700000e670000032740000fa7400003a750000cc7600002c77000066770000727d0000d27d00000c7e0000c4820000248300005e830000da8500003a8600007486000064880000c4880000fe880000d28a0000328b00006c8b0000048d0000408d0000a08d0000da8d0000ae8f00000e900000489000008a940000ea94000024950000f89600005897000092970000d49b0000349c00006e9c0000e2a200001ea3000048a300007ea30000b8a30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -256,7 +256,7 @@ MonoBehaviour:
     y: 0
     width: 791
     height: 363
-  m_MinSize: {x: 204, y: 222}
+  m_MinSize: {x: 104, y: 122}
   m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 2}
   m_Panes:
@@ -301,9 +301,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.44, y: 0, z: 4.3}
+    m_Target: {x: 350, y: 75, z: 0}
     speed: 2
-    m_Value: {x: 4.44, y: 0, z: 4.3}
+    m_Value: {x: 350, y: 75, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -332,13 +332,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.35556364, y: 0.28212973, z: -0.11350489, w: 0.88379514}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0.35556367, y: 0.28212976, z: -0.113504894, w: 0.8837952}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 12.35747
+    m_Target: 2476.87
     speed: 2
-    m_Value: 12.35747
+    m_Value: 2476.87
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -409,8 +409,8 @@ MonoBehaviour:
     y: 363
     width: 995
     height: 272
-  m_MinSize: {x: 232, y: 272}
-  m_MaxSize: {x: 10002, y: 10022}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -456,19 +456,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Claire Peta\Documents\GitHub\ReversableOctopus\GameJame2020
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 23}
-    m_SelectedIDs: 602e0000
-    m_LastClickedID: 11872
+    m_SelectedIDs: 242e0000
+    m_LastClickedID: 11812
     m_ExpandedIDs: 00000000202d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -522,8 +522,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c0afffff
-    m_LastClickedInstanceID: -20544
+    m_SelectedInstanceIDs: b8a30000
+    m_LastClickedInstanceID: 41912
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
@@ -641,5 +641,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 41912
   m_LastVerticalScrollValue: 0

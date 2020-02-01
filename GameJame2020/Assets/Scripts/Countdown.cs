@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Countdown : MonoBehaviour
 {
-    public int timeLeft = 60;
+    int timeLeft = 60;
     public TextMeshProUGUI countdown;
 
     void Start()
