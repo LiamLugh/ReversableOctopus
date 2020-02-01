@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject inventoryPrefab;
     public GameObject inventoryParent;
     public GameObject animalPrefab;
+    public GameObject ship;
     int winCount = 0;
 
     public ImageData[] imageData;
@@ -133,10 +134,17 @@ public class GameManager : MonoBehaviour
             if (animalName.Equals(collectedAnimals[i]))
             {
                 collectedAnimals.Remove(animalName);
+
                 //animate model being shot from cannon
+                GameObject animal = Instantiate(Resources.Load<GameObject>(animalName));
+                animal.transform.position = ship.transform.position;
+                animal.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+                Rigidbody rb = animal.GetComponent<Rigidbody>();
+                rb.AddRelativeForce(Vector3.one.normalized * 10f, ForceMode.Impulse);
 
                 //move all other animals further on from that number to the previous spot
-                if(i + 1 < inventoryPositions.Count)
+                if (i + 1 < inventoryPositions.Count)
                 {
                     for (int j = i + 1; j < inventoryPositions.Count; j++)
                     {

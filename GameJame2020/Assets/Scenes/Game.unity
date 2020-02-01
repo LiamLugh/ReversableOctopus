@@ -2503,6 +2503,7 @@ MonoBehaviour:
   inventoryParent: {fileID: 1852553179}
   animalPrefab: {fileID: 5006460849263383826, guid: 3802fa2a56785e44db4fd94d20516124,
     type: 3}
+  ship: {fileID: 1108750872}
   imageData:
   - name: Elephant
     data:
