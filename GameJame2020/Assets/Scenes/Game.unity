@@ -1102,6 +1102,8 @@ GameObject:
   - component: {fileID: 683764074}
   - component: {fileID: 683764073}
   - component: {fileID: 683764072}
+  - component: {fileID: 683764076}
+  - component: {fileID: 683764075}
   m_Layer: 5
   m_Name: Cannon Icon
   m_TagString: Untagged
@@ -1176,6 +1178,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683764070}
   m_CullTransparentMesh: 0
+--- !u!114 &683764075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683764070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392bf4daab94d3f4c9e941dcc742f722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 683764072}
+  sprites:
+  - {fileID: 21300000, guid: 9ac4d280367157642bb267d412b8acd9, type: 3}
+  - {fileID: 21300000, guid: 8012f3fd612287544a433874bca9fa67, type: 3}
+  - {fileID: 21300000, guid: 85746a38d08031444b6ee14d13630dda, type: 3}
+  data:
+  - w: 679
+    h: 529
+  - w: 756
+    h: 529
+  - w: 947
+    h: 628
+  delayTime: 1
+--- !u!114 &683764076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683764070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 683764075}
+          m_MethodName: Enter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 683764075}
+          m_MethodName: Exit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &865485699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2539,7 @@ MonoBehaviour:
     - -7.1
     - -4.19
     - 0.35
+  cS: {fileID: 683764075}
 --- !u!114 &1563433479
 MonoBehaviour:
   m_ObjectHideFlags: 0

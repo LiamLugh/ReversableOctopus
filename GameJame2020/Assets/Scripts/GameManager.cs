@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public ImageData[] imageData;
 
+    public CannonSwitch cS;
+
     private void Awake()
     {
         collectedAnimals = new List<string>();
@@ -123,6 +125,8 @@ public class GameManager : MonoBehaviour
     //this string will get send on the collision of the dropped item
     public void removeAnimal(string animalName)
     {
+        cS.Fire();
+
         //foreach(string animal in collectedAnimals)
         for(int i = 0; i < collectedAnimals.Count; i++)
         {
