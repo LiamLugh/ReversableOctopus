@@ -22,9 +22,10 @@ public class Countdown : MonoBehaviour
     {
         while (timeLeft > 0)
         {
-            if(Globals.paused == false)
+            yield return new WaitForSeconds(1);
+            if (Globals.paused == false)
             {
-                yield return new WaitForSeconds(1);
+                
                 timeLeft--;
             }
         }

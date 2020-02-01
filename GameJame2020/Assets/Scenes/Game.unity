@@ -2100,6 +2100,7 @@ MonoBehaviour:
   menu: {fileID: 408884591}
   mainMenu: {fileID: 865485699}
   countdownCanvas: {fileID: 1385771376}
+  ship: {fileID: 1108750874}
 --- !u!114 &1563433478
 MonoBehaviour:
   m_ObjectHideFlags: 0

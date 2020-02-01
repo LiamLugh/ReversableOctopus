@@ -10,6 +10,7 @@ public class Ship : MonoBehaviour
     public float maxSpeed = 5.0f;
     public float minSpeed = 0.0f;
     public float increment = 0.5f;
+    Vector3 prePauseVelocity;
 
     void Update()
     {
@@ -42,6 +43,17 @@ public class Ship : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x - increment, rb.velocity.y, rb.velocity.z);
             }
         }
+        
+    }
+    public void pauseVelocity()
+    {
+        prePauseVelocity = rb.velocity;
+        rb.velocity = Vector3.zero;
+    }
+
+    public void resumeVelocity()
+    {
+        rb.velocity = prePauseVelocity;
     }
 
     void OnTriggerEnter(Collider other)

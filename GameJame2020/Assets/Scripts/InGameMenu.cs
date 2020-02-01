@@ -7,6 +7,7 @@ public class InGameMenu : MonoBehaviour
     public GameObject menu;
     public GameObject mainMenu;
     public GameObject countdownCanvas;
+    public Ship ship;
 
     void Update()
     {
@@ -23,6 +24,7 @@ public class InGameMenu : MonoBehaviour
     public void onbuttonClick()
     {
         menu.SetActive(true);
+        ship.pauseVelocity();
         Globals.paused = true;
     }
 
@@ -59,5 +61,6 @@ public class InGameMenu : MonoBehaviour
         }
         countdownCanvas.SetActive(false);
         Globals.paused = false;
+        ship.resumeVelocity();
     }
 }
