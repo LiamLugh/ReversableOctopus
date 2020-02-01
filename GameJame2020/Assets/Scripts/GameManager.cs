@@ -11,13 +11,14 @@ public class GameManager : MonoBehaviour
     public GameObject inventoryPrefab;
     public GameObject inventoryParent;
     public GameObject animalPrefab;
+    int winCount = 0;
 
     private void Awake()
     {
         collectedAnimals = new List<string>();
         inventoryPositions = new List<Transform>();
 
-        for(int i = 0; i < Globals.levelPairCount; i++)
+        for(int i = 0; i < Globals.levelPairCount+1; i++)
         {
             GameObject cell = Instantiate(inventoryPrefab, inventoryParent.transform);
             inventoryPositions.Add(cell.transform);
@@ -26,9 +27,22 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        winCount = 0;
+        foreach(string animal in collectedAnimals)
+        {
+            if (animal.Equals("Complete"))
+            {
+                winCount++;
+            }
+        }
+        if(winCount == Globals.levelPairCount)
+        {
+            Globals.win = true;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("WinLose");
+        }
         //check for win state here
         //might have to look at changing the string in the collected animals to something else
-        //so as a win state we could check if we have the required amount of "colelcted" or something
+        //so as a win state we could check if we have the  required amount of "colelcted" or something
     }
 
     //this is the funciton the ship script will call when it collides with a animal
@@ -42,6 +56,7 @@ public class GameManager : MonoBehaviour
             if (animalName.Equals(collectedAnimals[i]))
             {
                 spawnAnimals(i, 10, animalName);
+                collectedAnimals[i] = "Complete";
                 spawned = true;
                 break;
             }

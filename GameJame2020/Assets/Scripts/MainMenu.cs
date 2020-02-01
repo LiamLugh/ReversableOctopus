@@ -2,13 +2,14 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject Menu;
     public GameObject AboutMenu;
     public GameObject SettingsMenu;
-
+    public TextMeshProUGUI pairCount;
     public Button MusicButton;
     public AudioSource backgroundMusic;
 
@@ -17,6 +18,11 @@ public class MainMenu : MonoBehaviour
         Menu.SetActive(true);
         SettingsMenu.SetActive(false);
         AboutMenu.SetActive(false);
+    }
+    private void Update()
+    {
+        Globals.levelPairCount = Int16.Parse(pairCount.text);
+            //Int16.Parse(pairCount.itemText.text);
     }
     public void OnPlayClicked()
     {
