@@ -7,6 +7,7 @@ using System;
 public class MainMenu : MonoBehaviour
 {
     public GameObject Menu;
+    public GameObject HowToPlayMenu;
     public GameObject AboutMenu;
     public GameObject SettingsMenu;
     public TextMeshProUGUI pairCount;
@@ -16,6 +17,7 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Menu.SetActive(true);
+        HowToPlayMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         AboutMenu.SetActive(false);
     }
@@ -38,6 +40,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnPlayClicked()
     {
+        Menu.SetActive(false);
+        HowToPlayMenu.SetActive(true);
+    }
+
+    public void OnContinueClick()
+    {
         Globals.paused = false;
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
@@ -57,6 +65,7 @@ public class MainMenu : MonoBehaviour
     public void OnBackClick()
     {
         Menu.SetActive(true);
+        HowToPlayMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         AboutMenu.SetActive(false);
     }
