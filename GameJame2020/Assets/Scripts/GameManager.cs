@@ -62,10 +62,13 @@ public class GameManager : MonoBehaviour
         animal.name = animalName;
         Image animalSprite = animal.GetComponent<Image>();
         animalSprite.sprite = Resources.Load<Sprite>(animalName);
-        Destroy(animal.GetComponent<DragHandeler>());
         if(offset < 9)
         {
             collectedAnimals.Add(animalName);
+        }
+        else
+        {
+            Destroy(animal.GetComponent<DragHandeler>());
         }
     }
 
