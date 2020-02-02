@@ -20,9 +20,13 @@ public static class MeshGenerator
             {
                 float f = heightMap[x, y];
 
-                if (f < 0.7f)
+                if( f < 0.3f)
                 {
-                    f = -1.0f;
+                    f = -100.0f;
+                }
+                else if (f < 0.7f)
+                {
+                    f = -5.0f;
                 }
                 else if (f > 0.8f)
                 {

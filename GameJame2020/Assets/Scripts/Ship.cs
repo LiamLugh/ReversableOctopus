@@ -15,28 +15,28 @@ public class Ship : MonoBehaviour
     void Update()
     {
         //ship movement for keypress
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if(rb.velocity.z < maxSpeed)
             {
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z + increment);
             }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            if (rb.velocity.z > minSpeed)
+            if (rb.velocity.z > (-maxSpeed))
             {
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z - increment);
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             if (rb.velocity.x > (-maxSpeed))
             {
                 rb.velocity = new Vector3(rb.velocity.x + increment, rb.velocity.y, rb.velocity.z);
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             if (rb.velocity.x < maxSpeed)
             {
@@ -68,8 +68,12 @@ public class Ship : MonoBehaviour
         }
         if(other.gameObject.tag == "Land")
         {
-            rb.velocity = Vector3.zero;
+            rb.velocity *= (-0.5f);
         }
     }
 
+    public void Fire(GameObject g)
+    {
+        GameObject creature = Instantiate(g, transform);
+    }
 }

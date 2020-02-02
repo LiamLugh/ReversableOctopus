@@ -2,31 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundMnager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    public AudioSource source;
-    public AudioClip[] shootEffects;
-    public AudioClip[] pickUpEffects;
-    public AudioClip youWinSound;
-
-    public void PlayShootEffect()
+    // Start is called before the first frame update
+    void Start()
     {
-        int rand = shootEffects.Length;
-        source.Stop();
-        source.PlayOneShot(shootEffects[rand]);
+        
     }
 
-    public void PickUpEffect()
+    // Update is called once per frame
+    void Update()
     {
-        int rand = pickUpEffects.Length;
-        source.Stop();
-        source.PlayOneShot(pickUpEffects[rand]);
+        
     }
-
-    public void PlayYouWin()
-    {
-        source.Stop();
-        source.PlayOneShot(youWinSound);
-    }
-
 }

@@ -33,6 +33,6 @@ public class Countdown : MonoBehaviour
 
         //here we simply go to a lose state because a win state hasnt been triggered beforehand
         Globals.win = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("WinLose");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("WinLose");
     }
 }

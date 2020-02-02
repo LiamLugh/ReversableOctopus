@@ -19,14 +19,12 @@ public class Inventory : MonoBehaviour, IHasChanged
 	#region IHasChanged implementation
 	public void HasChanged()
 	{
-		System.Text.StringBuilder builder = new System.Text.StringBuilder();
 		foreach (Transform slotTransform in slots)
 		{
 			GameObject item = slotTransform.GetComponent<Slot>().item;
 			if (item)
 			{
-				builder.Append(item.name);
-                gm.removeAnimal(builder.ToString());
+                gm.removeAnimal(item.name);
                 //here we remove the dropped animal from the inventory(icon) and boot it off the ship via the cannon :D
                 Object.Destroy(item);
             }

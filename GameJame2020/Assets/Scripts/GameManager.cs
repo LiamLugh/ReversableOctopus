@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject inventoryPrefab;
     public GameObject inventoryParent;
-    public GameObject animalPrefab;
+    public GameObject UIPrefab;
     public GameObject ship;
     int winCount = 0;
+
+    public GameObject elephant, giraffe, pig, penguin, unicorn;
 
     public ImageData[] imageData;
 
@@ -77,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     void spawnAnimals(int position, int offset, string animalName)
     {
-        GameObject animal = Instantiate(animalPrefab, inventoryPositions[position]);
+        GameObject animal = Instantiate(UIPrefab, inventoryPositions[position]);
         animal.transform.position = new Vector3(animal.transform.position.x + offset, animal.transform.position.y, animal.transform.position.z);
         animal.name = animalName;
         Image animalSprite = animal.GetComponent<Image>();
@@ -87,27 +89,27 @@ public class GameManager : MonoBehaviour
         {
             case "Elephant":
                 animalSprite.rectTransform.sizeDelta = new Vector2(imageData[0].data[0], imageData[0].data[1]);
-                animalSprite.rectTransform.localPosition = new Vector2(imageData[0].data[2], imageData[0].data[3]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[0].data[2] + offset, imageData[0].data[3]);
                 animalSprite.rectTransform.localScale = Vector3.one * imageData[0].data[4];
                 break;
             case "Giraffe":
                 animalSprite.rectTransform.sizeDelta = new Vector2(imageData[1].data[0], imageData[1].data[1]);
-                animalSprite.rectTransform.localPosition = new Vector2(imageData[1].data[2], imageData[1].data[3]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[1].data[2] + offset, imageData[1].data[3]);
                 animalSprite.rectTransform.localScale = Vector3.one * imageData[1].data[4];
                 break;
             case "Penguin":
                 animalSprite.rectTransform.sizeDelta = new Vector2(imageData[2].data[0], imageData[2].data[1]);
-                animalSprite.rectTransform.localPosition = new Vector2(imageData[2].data[2], imageData[2].data[3]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[2].data[2] + offset, imageData[2].data[3]);
                 animalSprite.rectTransform.localScale = Vector3.one * imageData[2].data[4];
                 break;
             case "Pig":
                 animalSprite.rectTransform.sizeDelta = new Vector2(imageData[3].data[0], imageData[3].data[1]);
-                animalSprite.rectTransform.localPosition = new Vector2(imageData[3].data[2], imageData[3].data[3]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[3].data[2] + offset, imageData[3].data[3]);
                 animalSprite.rectTransform.localScale = Vector3.one * imageData[3].data[4];
                 break;
             case "Unicorn":
                 animalSprite.rectTransform.sizeDelta = new Vector2(imageData[4].data[0], imageData[4].data[1]);
-                animalSprite.rectTransform.localPosition = new Vector2(imageData[4].data[2], imageData[4].data[3]);
+                animalSprite.rectTransform.localPosition = new Vector2(imageData[4].data[2] + offset, imageData[4].data[3]);
                 animalSprite.rectTransform.localScale = Vector3.one * imageData[4].data[4];
                 break;
         }
@@ -126,7 +128,7 @@ public class GameManager : MonoBehaviour
     //this string will get send on the collision of the dropped item
     public void removeAnimal(string animalName)
     {
-        cS.Fire();
+       //cS.Fire();
 
         //foreach(string animal in collectedAnimals)
         for(int i = 0; i < collectedAnimals.Count; i++)
@@ -136,13 +138,43 @@ public class GameManager : MonoBehaviour
                 collectedAnimals.Remove(animalName);
 
                 //animate model being shot from cannon
-                GameObject animal = Instantiate(Resources.Load<GameObject>(animalName));
-                animal.transform.position = ship.transform.position;
-                animal.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
-                Rigidbody rb = animal.GetComponent<Rigidbody>();
+                Rigidbody rb = null;
+                switch (animalName)
+                {
+                    case "Elephant":
+                        GameObject ele = Instantiate(elephant);
+                        ele.transform.position = ship.transform.position;
+                        ele.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        rb = ele.GetComponent<Rigidbody>();
+                        break;
+                    case "Giraffe":
+                        GameObject gir = Instantiate(giraffe);
+                        gir.transform.position = ship.transform.position;
+                        gir.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        rb = gir.GetComponent<Rigidbody>();
+                        break;
+                    case "Penguin":
+                        GameObject peng = Instantiate(penguin);
+                        peng.transform.position = ship.transform.position;
+                        peng.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        rb = peng.GetComponent<Rigidbody>();
+                        break;
+                    case "Pig":
+                        GameObject pi = Instantiate(pig);
+                        pi.transform.position = ship.transform.position;
+                        pi.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        rb = pi.GetComponent<Rigidbody>();
+                        break;
+                    case "Unicorn":
+                        GameObject uni = Instantiate(unicorn);
+                        uni.transform.position = ship.transform.position;
+                        uni.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        rb = uni.GetComponent<Rigidbody>();
+                        break;
+                }
                 rb.AddRelativeForce(Vector3.one.normalized * 10f, ForceMode.Impulse);
-
+                
+                
                 //move all other animals further on from that number to the previous spot
                 if (i + 1 < inventoryPositions.Count)
                 {

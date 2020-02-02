@@ -67,7 +67,7 @@ public class LandGenerator: MonoBehaviour
             display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap), TextureGenerator.TextureFromColourMap(colourMap, mapWidth, mapHeight));
         }
 
-        cSpawner.SpawnCreatures(noiseMap);
+        cSpawner.SpawnCreatures();
     }
 
     void OnValidate()

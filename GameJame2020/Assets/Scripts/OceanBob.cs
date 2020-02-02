@@ -11,9 +11,11 @@ public class OceanBob : MonoBehaviour
     Vector3 endPos;
     public float duration;
     public float waitTime;
+    public Transform player;
 
     void Start()
     {
+        //waitTime = Globals.time - duration;
         startPos = Vector3.one * startHeight;
         endPos = Vector3.one * endHeight;
         StartCoroutine(StartBobbing(duration));
@@ -34,6 +36,7 @@ public class OceanBob : MonoBehaviour
         while (elapsedTime < duration)
         {
             transform.position = Vector3.Lerp(startPos, endPos, (elapsedTime / duration));
+            player.position = new Vector3(player.position.x, transform.position.y, player.position.z);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

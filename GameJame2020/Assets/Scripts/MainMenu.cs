@@ -27,13 +27,13 @@ public class MainMenu : MonoBehaviour
         switch (Globals.levelPairCount)
         {
             case 1:
-                Globals.time = 45;
-                break;
-            case 2:
                 Globals.time = 60;
                 break;
-            case 3:
+            case 2:
                 Globals.time = 75;
+                break;
+            case 3:
+                Globals.time = 90;
                 break;
         }
     }

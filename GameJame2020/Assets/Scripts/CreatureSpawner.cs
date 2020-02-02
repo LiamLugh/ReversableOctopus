@@ -2,44 +2,68 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Security.Cryptography;
+using UnityEngine.SceneManagement;
 
 public class CreatureSpawner : MonoBehaviour
 {
+    public LandGenerator lGen;
+
     public int creatureCount = 4;
     public GameObject[] creatures;
     public float bottomRange = 0.45f;
     public float topRange = 0.5f;
-    public int border = 10;
+    public int border = 5;
+    public float playerRange = -10.0f;
+    public Transform player;
 
-    public List<Vector3> spawnLocations;
+    public List<Vector3> spawnLocations = new List<Vector3>();
+    public List<Vector3> playerSpawnLocations = new List<Vector3>();
 
-    public void SetSpawnLoactions(List<Vector3> list)
+    public MeshCollider collider;
+
+    public void SpawnCreatures()
     {
-        spawnLocations = list;
-    }
+        //List<Vector3> spawnLocations = new List<Vector3>();
+        //List<Vector3> playerSpawnLocations = new List<Vector3>();
 
-    public void SpawnCreatures(float[,] noiseMap)
-    {
-        List<Vector3> spawnPositions = new List<Vector3>();
+        creatureCount = Globals.levelPairCount + 1; 
+        /// Scan the map
 
-        int width = noiseMap.GetLength(0);
-        int height = noiseMap.GetLength(1);
+        int width = lGen.mapWidth;
+        int actualWidth = width / 4;
+        int height = lGen.mapHeight;
+        int actualHeight = height / 4;
 
-        for (int y = 0; y < height; y++)
+        for (int y = -actualHeight + border; y < actualHeight - border; y++)
         {
-            for (int x = 0; x < width; x++)
+            for (int x = -actualWidth + border; x < actualWidth - border; x++)
             {
-                float f = noiseMap[x, y];
+                // Raycast
+                RaycastHit hit;
+                Ray ray = new Ray(new Vector3(x, 100, y), Vector3.down);
 
-                // border location cull
-                if((x >= border && x < width-border) && (y >= border && y <= height-border))
+                if(Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    if (f > bottomRange && f < topRange) // height band
+                    if(hit.collider != null)
                     {
-                        spawnLocations.Add(new Vector3((x - 100) / 2, f / 2, (y - 100) / 2));
+                        if (hit.point.y > bottomRange && hit.point.y < topRange) // height band creature
+                        {
+                            spawnLocations.Add(new Vector3(x, hit.point.y, y));
+                        } 
+                        else if (hit.point.y < playerRange) // height band player
+                        {
+                            playerSpawnLocations.Add(new Vector3(x, 0.5f, y));
+                        }
                     }
                 }
+                
             }
+        }
+
+        if(spawnLocations.Count < creatureCount * 2)
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
 
         // Shuffle List
@@ -58,12 +82,21 @@ public class CreatureSpawner : MonoBehaviour
 
             //Spawn creature 1
             GameObject creature1 = Instantiate(creaturePrefab, spawnLocations[0], Quaternion.identity, transform);
+            spawnLocations.RemoveAt(0);
             //Spawn creature 1
-            GameObject creature2 = Instantiate(creaturePrefab, spawnLocations[1], Quaternion.identity, transform);
+            GameObject creature2 = Instantiate(creaturePrefab, spawnLocations[0], Quaternion.identity, transform);
+            spawnLocations.RemoveAt(0);
 
-            spawnLocations.RemoveAt(0);
-            spawnLocations.RemoveAt(0);
+            //Peel off clone
+            creature1.name = creature1.name.Substring(0, creature1.name.Length - 7);
+            creature2.name = creature1.name;
         }
+
+        // Set player start location
+        //Debug.Log("Player Spawn count: " + playerSpawnLocations.Count);
+        player.position = playerSpawnLocations[Random.Range(0, playerSpawnLocations.Count)];
+
+        //collider.enabled = false;
     }
 
     
