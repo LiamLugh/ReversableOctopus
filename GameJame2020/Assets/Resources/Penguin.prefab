@@ -84,7 +84,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1500
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -226,6 +226,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5605267136006309107, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: -1338522234265400507, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: 8057932508619267813, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: 7611335269613673018, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: -2884368227969120011, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: 4755222717512464868, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: 3763059158783578056, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: 2788098326623092949, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: -6189956343034598244, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: 2876213118096776171, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
+    - target: {fileID: 2331867576588685025, guid: cbd7c68310958f345bc36ba9482e13ea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06c261212831924cb8bf2567094c7d5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd7c68310958f345bc36ba9482e13ea, type: 3}
 --- !u!4 &3561475677612936745 stripped

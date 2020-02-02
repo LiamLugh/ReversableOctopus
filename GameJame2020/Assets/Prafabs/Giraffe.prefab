@@ -115,6 +115,81 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 219564597243041973, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: 6531775478872000799, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: -2872382680237050739, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: 6131618147018643512, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: -1328631084307714182, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: -612748582947296211, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: -8660074967104572165, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: 406794934286895622, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: 185444024258816340, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: 2235838684857953379, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: -7591175511581282975, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: 2656416933114346436, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: -2570206917892195049, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: -860807919148909839, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
+    - target: {fileID: 1937995624088775786, guid: 0bd20b794efc8bb4aafed8527f25aadb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 193136457f240cf48b7dd8bacf78e0a9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd20b794efc8bb4aafed8527f25aadb, type: 3}
 --- !u!4 &3581392295434308169 stripped

@@ -11,6 +11,9 @@ public class Ship : MonoBehaviour
     public float minSpeed = 0.0f;
     public float increment = 0.5f;
     Vector3 prePauseVelocity;
+    public AudioClip[] animalSounds = new AudioClip[5];
+    public AudioSource toplaysounds;
+
 
     void Update()
     {
@@ -60,8 +63,25 @@ public class Ship : MonoBehaviour
     {
         if (other.gameObject.tag == "Animal")
         {
-            AudioSource sound = other.gameObject.GetComponent<AudioSource>();
-            sound.Play();
+            switch (other.gameObject.name)
+            {
+                case "Elephant":
+                    toplaysounds.clip = animalSounds[0];
+                    break;
+                case "Giraffe":
+                    toplaysounds.clip = animalSounds[1];
+                    break;
+                case "Penguin":
+                    toplaysounds.clip = animalSounds[2];
+                    break;
+                case "Pig":
+                    toplaysounds.clip = animalSounds[3];
+                    break;
+                case "Unicorn":
+                    toplaysounds.clip = animalSounds[4];
+                    break;
+            }
+            toplaysounds.Play();
 
             if (gm.collectedAnimals.Count < Globals.levelPairCount+1)
             {
