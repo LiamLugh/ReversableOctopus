@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject inventoryParent;
     public GameObject UIPrefab;
     public GameObject ship;
+    public AudioSource cannon;
     int winCount = 0;
 
     public GameObject elephant, giraffe, pig, penguin, unicorn;
@@ -128,16 +129,14 @@ public class GameManager : MonoBehaviour
     //this string will get send on the collision of the dropped item
     public void removeAnimal(string animalName)
     {
-       //cS.Fire();
+       cS.Fire();
 
-        //foreach(string animal in collectedAnimals)
         for(int i = 0; i < collectedAnimals.Count; i++)
         {
             if (animalName.Equals(collectedAnimals[i]))
             {
                 collectedAnimals.Remove(animalName);
 
-                //animate model being shot from cannon
                 Rigidbody rb = null;
                 switch (animalName)
                 {
@@ -172,10 +171,9 @@ public class GameManager : MonoBehaviour
                         rb = uni.GetComponent<Rigidbody>();
                         break;
                 }
+                cannon.Play();
                 rb.AddRelativeForce(Vector3.one.normalized * 10f, ForceMode.Impulse);
-                
-                
-                //move all other animals further on from that number to the previous spot
+
                 if (i + 1 < inventoryPositions.Count)
                 {
                     for (int j = i + 1; j < inventoryPositions.Count; j++)

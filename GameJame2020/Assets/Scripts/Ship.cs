@@ -60,6 +60,9 @@ public class Ship : MonoBehaviour
     {
         if (other.gameObject.tag == "Animal")
         {
+            AudioSource sound = other.gameObject.GetComponent<AudioSource>();
+            sound.Play();
+
             if (gm.collectedAnimals.Count < Globals.levelPairCount+1)
             {
                 gm.collectAnimal(other.gameObject.name);
