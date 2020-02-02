@@ -69,6 +69,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -194,8 +198,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10440}
     - Class: 114
       Script: {instanceID: 10626}
-    - Class: 114
-      Script: {instanceID: 10714}
     - Class: 114
       Script: {instanceID: 10842}
     - Class: 114
@@ -632,7 +634,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: afd6fc6b3e1ef71d4dfa7ecbb6538394
+      Hash: 1e7047095ebf768b9d477e44a7b38c4b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -806,7 +808,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 80dc04cf4005a5be95dcd25d57c56186
+      Hash: 8ea8cda5cba1412edea922f62288c717
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ship
